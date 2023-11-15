@@ -1,0 +1,10 @@
+version: "3.7"
+
+services:
+  app: 
+    image: deploy-docker/python
+    ports:
+      - "${PUBLIC_PORT}:${OS_PORT}"
+    restart: unless-stopped
+    environment:
+      PORT: ${OS_PORT}
